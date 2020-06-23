@@ -79,7 +79,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                 required
               />
             </p>
-            <p>
+            <p className="highlight">
               <label htmlFor="univ">University:</label>
               <input
                 autoComplete="off"
@@ -114,8 +114,9 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             // TODO: format as cards, add timestamp
             <p key={i} className={message.premium ? 'is-premium' : ''}>
               <strong>{message.sender}</strong>:<br/>
-              {message.text}
-              <p>Sent for University: {message.univName}</p>
+              {message.text}<br/>
+              <p>Sent for: </p><br/>
+                {message.univName}
             </p>
           )}
         </>
