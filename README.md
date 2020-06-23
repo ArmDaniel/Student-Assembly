@@ -1,3 +1,14 @@
+## Student Assembly
+
+Being my first time using the NEAR protocol, I decided to follow the 'Guest Book' template as it fitted my goals best.  
+This application is meant to give students a way to express their thoughts and concerns at their University without
+fear of censorship. I decided to allow upvoting an idea/post by means of the NEAR tokens. I shall further document the process,
+deciding which idea is feasible and what modifications have been made. -Daniel (23.06.2020)
+
+I decided to leave the main chunk of the README for everybody to see until the application is complete.
+
+---
+
 Guest Book
 ==========
 
