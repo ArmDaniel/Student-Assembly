@@ -17,7 +17,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = useCallback(e => {
     e.preventDefault()
 
-    const { fieldset, message, donation } = e.target.elements
+    const { fieldset, message, univ, donation } = e.target.elements
 
     fieldset.disabled = true
 
@@ -25,7 +25,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value },
+      { text: message.value, univName: univ.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -33,6 +33,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         setMessages(messages)
 
         message.value = ''
+        univ.value = ''
         donation.value = SUGGESTED_DONATION
         fieldset.disabled = false
         message.focus()
@@ -43,7 +44,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const signIn = useCallback(() => {
     wallet.requestSignIn(
       nearConfig.contractName,
-      'NEAR Guest Book'
+      'NEAR Student Assembly'
     )
   }, [])
 
@@ -59,7 +60,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        <h1>NEAR Guest Book</h1>
+        <h1>NEAR Student Assembly</h1>
         {currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
@@ -68,13 +69,22 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       {currentUser && (
         <form onSubmit={onSubmit}>
           <fieldset id="fieldset">
-            <p>Sign the guest book, { currentUser.accountId }!</p>
+            <p>Make your voice heard, { currentUser.accountId }!</p>
             <p className="highlight">
               <label htmlFor="message">Message:</label>
               <input
                 autoComplete="off"
                 autoFocus
                 id="message"
+                required
+              />
+            </p>
+            <p>
+              <label htmlFor="univ">University:</label>
+              <input
+                autoComplete="off"
+                autoFocus
+                id="univ"
                 required
               />
             </p>
@@ -105,6 +115,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             <p key={i} className={message.premium ? 'is-premium' : ''}>
               <strong>{message.sender}</strong>:<br/>
               {message.text}
+              <p>Sent for University: {message.univName}</p>
             </p>
           )}
         </>
