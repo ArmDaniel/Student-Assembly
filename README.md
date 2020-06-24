@@ -7,6 +7,8 @@ deciding which idea is feasible and what modifications have been made. -Daniel (
 
 I decided to leave the main chunk of the README for everybody to see until the application is complete.
 
+[![Known Vulnerabilities](https://snyk.io/test/github/Motanovici/Student-Assembly/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Motanovici/Student-Assembly?targetFile=package.json)
+
 ---
 
 Guest Book
