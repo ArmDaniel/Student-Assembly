@@ -1,11 +1,33 @@
 ## Student Assembly
 
+#### Justification and Thought Process
+
 Being my first time using the NEAR protocol, I decided to follow the 'Guest Book' template as it fitted my goals best.  
 This application is meant to give students a way to express their thoughts and concerns at their University without
-fear of censorship. I decided to allow upvoting an idea/post by means of the NEAR tokens. I shall further document the process,
-deciding which idea is feasible and what modifications have been made. -Daniel (23.06.2020)
+fear of censorship.
+
+I shall further document the process, deciding which idea is feasible and what modifications have been made. 
+-Daniel (23.06.2020)
+
+---
+
+The application currently provides the student's University name ,a timestamp and an UUID for clear distinction and future grouping(by interests or such).
+
+As I was developing the dApp, its importance became clear: it can provide students with a means to share ideas and express problems from their communities in a transparent way. It is also able to let them organize their content based on interests, such that information overload is not a problem. Also, placed in the current context and the advancement of technology, this application can reach out to students worldwide , no matter of their social status or other prejudicial factors.
+
+Being built using the NEAR protocol, it ensures everything is stored permanently and cannot be altered. Censorship is done away with.
+
+Taking into consideration how many innovating ideas students around the globe have and how they can change their community, such an application comes as a helpful tool to further express all that creative potential. Last but not least, any problems can be dealt with directly on the platform and their authenticity is verified by students from the community. This can be done via NEAR tokens, which would allow students to vote/downvote anything that is posted on the platform.Thus, tokens granted by others based on quality and originality establish influence. 
+
+I plan on making further research using this application by distributing it among colleagues in my University and write a Whitepaper based on the results. 
+
+
+-Daniel (06.07.2020)
+
+---
 
 I decided to leave the main chunk of the README for everybody to see until the application is complete.
+A complete Snyk scan has been made and the dApp was deemed as safe.
 
 [![Known Vulnerabilities](https://snyk.io/test/github/Motanovici/Student-Assembly/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Motanovici/Student-Assembly?targetFile=package.json)
 
