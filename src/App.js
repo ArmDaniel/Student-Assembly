@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Big from 'big.js'
 
 const SUGGESTED_DONATION = '1'
+const UNIVERSITY_LIST = 'POLITEHNICA BUCHAREST'
 const BOATLOAD_OF_GAS = Big(1).times(10 ** 16).toFixed()
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
@@ -25,7 +26,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value, univName: univ.value },
+      { text: message.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -33,7 +34,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         setMessages(messages)
 
         message.value = ''
-        univ.value = ''
+        univ.value = UNIVERSITY_LIST
         donation.value = SUGGESTED_DONATION
         fieldset.disabled = false
         message.focus()
@@ -79,13 +80,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                 required
               />
             </p>
-            <p className="highlight">
+            <p>
               <label htmlFor="univ">University:</label>
               <input
                 autoComplete="off"
-                autoFocus
+                defaultValue={UNIVERSITY_LIST}
                 id="univ"
-                required
               />
             </p>
             <p>
@@ -114,9 +114,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             // TODO: format as cards, add timestamp
             <p key={i} className={message.premium ? 'is-premium' : ''}>
               <strong>{message.sender}</strong>:<br/>
-              {message.text}<br/>
-              <p>Sent for: </p><br/>
-                {message.univName}
+              {message.text}
+              
             </p>
           )}
         </>
