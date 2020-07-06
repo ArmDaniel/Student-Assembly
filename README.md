@@ -4,6 +4,8 @@ For Demo purposes:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Motanovici/Student-Assembly)
 
+Video Demo: [Student Assembly](https://youtu.be/z1FWUiJyfWQ)
+
 ---
 
 #### Justification and Thought Process
