@@ -8,6 +8,8 @@ Video Demo: [Student Assembly](https://youtu.be/z1FWUiJyfWQ)
 
 Twitter post: [Student Assembly](https://twitter.com/Naytlin2/status/1280223391841214466)
 
+![Student Assembly Logo](https://github.com/Motanovici/Student-Assembly/blob/master/img/StudentAssemblyLogo.png)
+
 ---
 
 #### Justification and Thought Process
