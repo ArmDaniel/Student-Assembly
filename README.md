@@ -6,6 +6,8 @@ For Demo purposes:
 
 Video Demo: [Student Assembly](https://youtu.be/z1FWUiJyfWQ)
 
+Twitter post: [Student Assembly](https://twitter.com/Naytlin2/status/1280223391841214466)
+
 ---
 
 #### Justification and Thought Process
