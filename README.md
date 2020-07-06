@@ -32,7 +32,6 @@ I plan on making further research using this application by distributing it amon
 
 ---
 
-I decided to leave the main chunk of the README for everybody to see until the application is complete.
 A complete Snyk scan has been made and the dApp was deemed as safe.
 
 [![Known Vulnerabilities](https://snyk.io/test/github/Motanovici/Student-Assembly/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Motanovici/Student-Assembly?targetFile=package.json)
