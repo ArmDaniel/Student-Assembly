@@ -124,7 +124,9 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
               {message.text}<br/>
               <p>University: {univ.value} </p>
               <p>Current Time: {TIME.toString()} </p>
-              
+              <button type="submit">
+               Upvote this post :)
+              </button>
             </p>
             
           )}
