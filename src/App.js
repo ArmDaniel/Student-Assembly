@@ -2,16 +2,19 @@ import 'regenerator-runtime/runtime'
 import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Big from 'big.js'
+import {v4 as uuidv4} from "uuid";
 
 const SUGGESTED_DONATION = '1'
 const UNIVERSITY_LIST = 'POLITEHNICA BUCHAREST'
 const BOATLOAD_OF_GAS = Big(1).times(10 ** 16).toFixed()
+const TIME = new Date()
+
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    // TODO: don't just fetch once; subscribe!
+    
     contract.getMessages().then(setMessages)
   }, [])
 
@@ -22,9 +25,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
     fieldset.disabled = true
 
-    // TODO: optimistically update page with new message,
-    // update blockchain data in background
-    // add uuid to each message, so we know which one is already known
+    
     contract.addMessage(
       { text: message.value },
       BOATLOAD_OF_GAS,
@@ -88,6 +89,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                 id="univ"
               />
             </p>
+            
             <p>
               <label htmlFor="donation">Donation (optional):</label>
               <input
@@ -101,6 +103,10 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
               />
               <span title="NEAR Tokens">Ⓝ</span>
             </p>
+            <p>
+              <p>Your unique identifier:</p>
+              {uuidv4()}<br/>
+            </p>
             <button type="submit">
               Sign
             </button>
@@ -110,13 +116,17 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       {!!messages.length && (
         <>
           <h2>Messages</h2>
+          
           {messages.map((message, i) =>
-            // TODO: format as cards, add timestamp
+            
             <p key={i} className={message.premium ? 'is-premium' : ''}>
               <strong>{message.sender}</strong>:<br/>
-              {message.text}
+              {message.text}<br/>
+              <p>University: {univ.value} </p>
+              <p>Current Time: {TIME.toString()} </p>
               
             </p>
+            
           )}
         </>
       )}
