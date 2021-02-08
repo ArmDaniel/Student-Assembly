@@ -21,7 +21,6 @@ This application is meant to give students a way to express their thoughts and c
 fear of censorship.
 
 I shall further document the process, deciding which idea is feasible and what modifications have been made. 
--Daniel (23.06.2020)
 
 ---
 
